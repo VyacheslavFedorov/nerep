@@ -1,0 +1,782 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Documentation | Czm All in One Social Chat Support</title>
+		<meta name="description" content="Learn how the Czm All in One Social Chat Support Plugin works."/>
+		<!-- Needed For Mobile Devices -->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=0">
+		<!-- Google Font Family -->
+		<link href="https://fonts.googleapis.com/css?family=Poppins:400,500,600&display=swap" rel="stylesheet">
+		<!-- Favicon -->
+		<link href="assets/img/favicon.png" rel="shortcut icon" type="image/png">
+		<!-- PrismJS CSS -->
+		<link href="assets/css/prism.css" rel="stylesheet">
+		<!-- Bootstrap Min CSS -->
+		<link href="assets/css/bootstrap.min.css" rel="stylesheet">
+		<!-- Documentation CSS -->
+		<link href="assets/css/documentation.css" rel="stylesheet">
+	</head>
+	<body>
+		<header>
+			<div class="top">
+				<div class="container">
+					<a href="./" class="logo"></a>
+				</div>
+			</div>
+			<div class="bottom">
+				<div class="container">
+					<nav class="navbar">
+						<div class="navbar-toggler" data-toggle="collapse" data-target="#navbar">
+							<div class="animated-icon">
+								<span></span>
+								<span></span>
+								<span></span>
+								<span></span>
+							</div>
+						</div>
+						<div class="collapse navbar-collapse" id="navbar">
+							<ul>
+								<li><a href="#overview" class="active scroll-move">Overview</a></li>
+								<li><a href="#installation" class="scroll-move">Installation</a></li>
+								<li><a href="#including_files" class="scroll-move">Including Files</a></li>
+								<li><a href="#html" class="scroll-move">HTML</a></li>
+								<li><a href="#initialization" class="scroll-move">Initialization</a></li>
+								<li><a href="#example_usage" class="scroll-move">Example Usage</a></li>
+								<li><a href="#options" class="scroll-move">Options</a></li>
+							</ul>
+						</div>
+					</nav>
+					<div class="clearfix"></div>
+				</div>
+			</div>
+		</header>
+		<section id="overview">
+			<div class="container">
+				<h2>Czm All in One Social Chat Support</h2>
+				<div class="alert alert-success mb-0">Thank you for purchasing this plugin.<br>If you have any questions, you can contact us via "<a href="mailto:support@cizimmedya.com">support@cizimmedya.com</a>" e-mail address or via the contact form <a href="https://codecanyon.net/user/czmmedia" target="_blank" rel="nofollow">here</a>.</div>
+			</div>
+		</section>
+		<section id="installation">
+			<div class="container">
+				<h2 class="mb-3">Installation</h2>
+				<div class="content">
+					<p>Here are the steps to include this plugin in your existing page/theme:</p>
+					<ul>
+						<li>Unzip the downloaded zip file "codecanyon-xxxxx.zip" folder</li>
+						<li>Upload the "main-file/plugin" folder to your server</li>
+					</ul>
+					<ol class="number">
+						<li>First include the CSS and JS files to your page as shown <a href="#including_files" class="scroll-move">here</a></li>
+						<li>Then the HTML <a href="#html" class="scroll-move">here</a> and copy and paste it into anywhere on your page</li>
+						<li>Finally initialize the plugin with Javascript, copy the code from <a href="#initialization" class="scroll-move">here</a>, paste it at the bottom of your code page. (after &lt;script src="plugin/czm-chat-support.min.js"&gt;&lt;/script&gt;)</li>
+					</ol>
+				</div>
+			</div>
+		</section>
+		<section id="including_files">
+			<div class="container">
+				<h2>Including Files</h2>
+				<p class="mb-1">These are required files you need to import in your page so the plugin can work.</p>
+				<div class="content">
+					<pre><code class="language-html">&lt;link href="plugin/components/font-awesome/css/fontawesome.min.css" rel="stylesheet"&gt;
+&lt;link href="plugin/czm-chat-support.css" rel="stylesheet"&gt;
+
+&lt;script src="plugin/components/jquery/jquery-1.9.0.min.js"&gt;&lt;/script&gt;
+&lt;script src="plugin/components/moment/moment.min.js"&gt;&lt;/script&gt;
+&lt;script src="plugin/components/moment/moment-timezone-with-data.min.js"&gt;&lt;/script&gt;
+&lt;script src="plugin/czm-chat-support.min.js"&gt;&lt;/script&gt;</code></pre>
+					<p>It's not required, but I recommend placing the CSS files in <code>&lt;head&gt;</code> and the JavaScript files and initialization code in the footer of your site (before the closing <code>&lt;/body&gt;</code> tag). Also if you already have jquery.js on your site, don’t include it a second time.</p>
+				</div>
+			</div>
+		</section>
+		<section id="html">
+			<div class="container">
+				<h3>HTML</h3>
+				<div class="content">
+					<p>You need to add HTML codes between <code>&lt;body&gt;</code> <code>&lt;/body&gt;</code>.</p>
+					<pre><code class="language-html">&lt;div id="example"&gt;&lt;/div&gt;</code></pre>
+				</div>
+			</div>
+		</section>
+		<section id="initialization">
+			<div class="container">
+				<h3>Initialization</h3>
+				<div class="content">
+					<pre><code class="language-html">&lt;script&gt;
+
+$('#example').czmChatSupport({
+
+	/* Button Settings */
+	button: {
+		position: "right", /* left, right or false. "position:false" does not pin to the left or right */
+		style: 1, /* Button style. Number between 1 and 7 */
+		src: '&lt;i class="fab fa-whatsapp"&gt;&lt;/i&gt;', /* Image, Icon or SVG */
+		backgroudColor: "#10c379", /* Html color code */
+		effect: 1, /* Button effect. Number between 1 and 7 */
+		notificationNumber: "1", /* Custom text or false. To remove, (notificationNumber:false) */
+		speechBubble: "How can we help you?", /* To remove, (speechBubble:false) */
+		pulseEffect: true, /* To remove, (pulseEffect:false) */
+		text: { /* For Button style larger than 1 */
+			title: "Need help? Chat with us", /* Writing is required */
+			description: "Customer Support", /* To remove, (description:false) */
+			online: "I'm Online", /* To remove, (online:false) */
+			offline: "I will be back soon" /* To remove, (offline:false) */
+		}
+	},
+
+	/* Popup Settings */
+	popup: {
+		automaticOpen: false, /* true or false (Open popup automatically when the page is loaded) */
+		outsideClickClosePopup: true, /* true or false (Clicking anywhere on the page will close the popup) */
+		effect: 1, /* Popup opening effect. Number between 1 and 15 */
+		header: {
+			backgroudColor: "#10c379", /* Html color code */
+			title: "Need help? Chat with us", /* Writing is required */
+			description: "Click one of our representatives below" /* To remove, (description:false) */
+		},
+
+		/* Representative Settings */
+		persons: [
+
+		/* Copy for more representatives [::Start Copy::] */
+		{
+			avatar: {
+				src: '&lt;img src="assets/img/person/1.jpg" alt=""&gt;', /* Image, Icon or SVG */
+				backgroudColor: "#ffffff", /* Html color code */
+				onlineCircle: true /* Avatar online circle. To remove, (onlineCircle:false) */
+			},
+			text: {
+				title: "Lorna Hensley", /* Writing is required */
+				description: "Sales Support", /* To remove, (description:false) */
+				online: "I'm Online", /* To remove, (online:false) */
+				offline: "I will be back soon" /* To remove, (offline:false) */
+			},
+			link: {
+				desktop: "https://web.whatsapp.com/send?phone=905377323226&text=Hi", /* Writing is required */
+				mobile: "https://wa.me/905377323226/?text=Hi" /* If it is hidden desktop link will be valid. To remove, (mobile:false) */
+			},
+			onlineDay: {
+				/* Change the day you are offline like this. (sunday:false) */
+				sunday: "00:00-23:59",
+				monday: "00:00-23:59",
+				tuesday: "00:00-23:59",
+				wednesday: "00:00-23:59",
+				thursday: "00:00-23:59",
+				friday: "00:00-23:59",
+				saturday: "00:00-23:59"
+			}
+		},
+		/* [::End Copy::] */
+
+		/* Copy for more representatives [::Start Copy::] */
+		{
+			avatar: {
+				src: '&lt;img src="assets/img/person/2.jpg" alt=""&gt;', /* Font, Image or SVG */
+				backgroudColor: "#ffffff", /* Html color code */
+				onlineCircle: true /* Avatar online circle. To remove, (onlineCircle:false) */
+			},
+			text: {
+				title: "Mattie Simmonds", /* Writing is required */
+				description: "Customer Support", /* Custom text or false. To remove, (description:false) */
+				online: "I'm Online", /* Custom text or false. To remove, (online:false) */
+				offline: "I will be back soon" /* Custom text or false. To remove, (offline:false) */
+			},
+			link: {
+				desktop: "https://web.whatsapp.com/send?phone=905377323226&text=Hi", /* Writing is required */
+				mobile: "https://wa.me/905377323226/?text=Hi" /* If it is hidden desktop link will be valid. To remove, (mobile:false) */
+			},
+			onlineDay: {
+				/* Change the day you are offline like this. (sunday:false) */
+				sunday: "00:00-23:59",
+				monday: "00:00-23:59",
+				tuesday: "00:00-23:59",
+				wednesday: "00:00-23:59",
+				thursday: "00:00-23:59",
+				friday: "00:00-23:59",
+				saturday: "00:00-23:59"
+			}
+		},
+		/* [::End Copy::] */
+
+		/* Copy for more representatives [::Start Copy::] */
+		{
+			avatar: {
+				src: '&lt;img src="assets/img/person/3.jpg" alt=""&gt;', /* Font, Image or SVG */
+				backgroudColor: "#ffffff", /* Html color code */
+				onlineCircle: true /* Avatar online circle. To remove, (onlineCircle:false) */
+			},
+			text: {
+				title: "Kole Cleg", /* Writing is required */
+				description: "Techincal Support", /* Custom text or false. To remove, (description:false) */
+				online: "I'm Online", /* Custom text or false. To remove, (online:false) */
+				offline: "I will be back soon" /* Custom text or false. To remove, (offline:false) */
+			},
+			link: {
+				desktop: "https://web.whatsapp.com/send?phone=905377323226&text=Hi", /* Writing is required */
+				mobile: "https://wa.me/905377323226/?text=Hi" /* If it is hidden desktop link will be valid. To remove, (mobile:false) */
+			},
+			onlineDay: {
+				/* Change the day you are offline like this. (sunday:false) */
+				sunday: false,
+				monday: false,
+				tuesday: false,
+				wednesday: false,
+				thursday: false,
+				friday: false,
+				saturday: false
+			}
+		},
+		/* [::End Copy::] */
+
+		]
+	},
+
+	/* Other Settings */
+	sound: true, /* true (default sound), false or custom sound. Custom sound example, (sound:'assets/sound/notification.mp3') */
+	changeBrowserTitle: "New Message!", /* Custom text or false. To remove, (changeBrowserTitle:false) */
+	cookie: false, /* It does not show the speech bubble, notification number, and pulse effect again for the specified time. For example, do not show for 1 hour, (cookie:1) or to remove, (cookie:false) */
+});
+
+&lt;/script&gt;</code></pre>
+					<p>You can see the options available <a href="#options" class="scroll-move">here</a>.</p>
+				</div>
+			</div>
+		</section>
+		<section id="example_usage">
+			<div class="container">
+				<h3>Example Usage</h3>
+				<div class="content">
+					<pre><code class="language-html">&lt;html&gt;
+&lt;head&gt;
+
+	&lt;!-- *** [START] REQUIRED CSS FILES *** --&gt;</code>
+	<code class="highlight language-html">&lt;link href="plugin/components/font-awesome/css/fontawesome.min.css" rel="stylesheet"&gt;
+&lt;link href="plugin/czm-chat-support.css" rel="stylesheet"&gt;</code><code class="language-html">
+	&lt;!-- *** [END] REQUIRED CSS FILES *** --&gt;
+
+&lt;/head&gt;
+&lt;body&gt;
+
+	&lt;!-- *** [START] REQUIRED DIV *** --&gt;</code>
+	<code class="highlight language-html">&lt;div id="example"&gt;&lt;/div&gt;</code><code class="language-html">
+	&lt;!-- *** [END] REQUIRED DIV *** --&gt;
+
+	&lt;!-- *** [START] REQUIRED JS FILES *** --&gt;</code>
+	<code class="highlight language-html">&lt;script src="plugin/components/jquery/jquery-1.9.0.min.js"&gt;&lt;/script&gt;
+&lt;script src="plugin/components/moment/moment.min.js"&gt;&lt;/script&gt;
+&lt;script src="plugin/components/moment/moment-timezone-with-data.min.js"&gt;&lt;/script&gt;
+&lt;script src="plugin/czm-chat-support.min.js"&gt;&lt;/script&gt;
+&lt;script&gt;
+
+$('#example').czmChatSupport({
+
+	/* Button Settings */
+	button: {
+		position: "right", /* left, right or false. "position:false" does not pin to the left or right */
+		style: 1, /* Button style. Number between 1 and 7 */
+		src: '&lt;i class="fab fa-whatsapp"&gt;&lt;/i&gt;', /* Image, Icon or SVG */
+		backgroudColor: "#10c379", /* Html color code */
+		effect: 1, /* Button effect. Number between 1 and 7 */
+		notificationNumber: "1", /* Custom text or false. To remove, (notificationNumber:false) */
+		speechBubble: "How can we help you?", /* To remove, (speechBubble:false) */
+		pulseEffect: true, /* To remove, (pulseEffect:false) */
+		text: { /* For Button style larger than 1 */
+			title: "Need help? Chat with us", /* Writing is required */
+			description: "Customer Support", /* To remove, (description:false) */
+			online: "I'm Online", /* To remove, (online:false) */
+			offline: "I will be back soon" /* To remove, (offline:false) */
+		}
+	},
+
+	/* Popup Settings */
+	popup: {
+		automaticOpen: false, /* true or false (Open popup automatically when the page is loaded) */
+		outsideClickClosePopup: true, /* true or false (Clicking anywhere on the page will close the popup) */
+		effect: 1, /* Popup opening effect. Number between 1 and 15 */
+		header: {
+			backgroudColor: "#10c379", /* Html color code */
+			title: "Need help? Chat with us", /* Writing is required */
+			description: "Click one of our representatives below" /* To remove, (description:false) */
+		},
+
+		/* Representative Settings */
+		persons: [
+
+		/* Copy for more representatives [::Start Copy::] */
+		{
+			avatar: {
+				src: '&lt;img src="assets/img/person/1.jpg" alt=""&gt;', /* Image, Icon or SVG */
+				backgroudColor: "#ffffff", /* Html color code */
+				onlineCircle: true /* Avatar online circle. To remove, (onlineCircle:false) */
+			},
+			text: {
+				title: "Lorna Hensley", /* Writing is required */
+				description: "Sales Support", /* To remove, (description:false) */
+				online: "I'm Online", /* To remove, (online:false) */
+				offline: "I will be back soon" /* To remove, (offline:false) */
+			},
+			link: {
+				desktop: "https://web.whatsapp.com/send?phone=905377323226&text=Hi", /* Writing is required */
+				mobile: "https://wa.me/905377323226/?text=Hi" /* If it is hidden desktop link will be valid. To remove, (mobile:false) */
+			},
+			onlineDay: {
+				/* Change the day you are offline like this. (sunday:false) */
+				sunday: "00:00-23:59",
+				monday: "00:00-23:59",
+				tuesday: "00:00-23:59",
+				wednesday: "00:00-23:59",
+				thursday: "00:00-23:59",
+				friday: "00:00-23:59",
+				saturday: "00:00-23:59"
+			}
+		},
+		/* [::End Copy::] */
+
+		/* Copy for more representatives [::Start Copy::] */
+		{
+			avatar: {
+				src: '&lt;img src="assets/img/person/2.jpg" alt=""&gt;', /* Font, Image or SVG */
+				backgroudColor: "#ffffff", /* Html color code */
+				onlineCircle: true /* Avatar online circle. To remove, (onlineCircle:false) */
+			},
+			text: {
+				title: "Mattie Simmonds", /* Writing is required */
+				description: "Customer Support", /* Custom text or false. To remove, (description:false) */
+				online: "I'm Online", /* Custom text or false. To remove, (online:false) */
+				offline: "I will be back soon" /* Custom text or false. To remove, (offline:false) */
+			},
+			link: {
+				desktop: "https://web.whatsapp.com/send?phone=905377323226&text=Hi", /* Writing is required */
+				mobile: "https://wa.me/905377323226/?text=Hi" /* If it is hidden desktop link will be valid. To remove, (mobile:false) */
+			},
+			onlineDay: {
+				/* Change the day you are offline like this. (sunday:false) */
+				sunday: "00:00-23:59",
+				monday: "00:00-23:59",
+				tuesday: "00:00-23:59",
+				wednesday: "00:00-23:59",
+				thursday: "00:00-23:59",
+				friday: "00:00-23:59",
+				saturday: "00:00-23:59"
+			}
+		},
+		/* [::End Copy::] */
+
+		/* Copy for more representatives [::Start Copy::] */
+		{
+			avatar: {
+				src: '&lt;img src="assets/img/person/3.jpg" alt=""&gt;', /* Font, Image or SVG */
+				backgroudColor: "#ffffff", /* Html color code */
+				onlineCircle: true /* Avatar online circle. To remove, (onlineCircle:false) */
+			},
+			text: {
+				title: "Kole Cleg", /* Writing is required */
+				description: "Techincal Support", /* Custom text or false. To remove, (description:false) */
+				online: "I'm Online", /* Custom text or false. To remove, (online:false) */
+				offline: "I will be back soon" /* Custom text or false. To remove, (offline:false) */
+			},
+			link: {
+				desktop: "https://web.whatsapp.com/send?phone=905377323226&text=Hi", /* Writing is required */
+				mobile: "https://wa.me/905377323226/?text=Hi" /* If it is hidden desktop link will be valid. To remove, (mobile:false) */
+			},
+			onlineDay: {
+				/* Change the day you are offline like this. (sunday:false) */
+				sunday: false,
+				monday: false,
+				tuesday: false,
+				wednesday: false,
+				thursday: false,
+				friday: false,
+				saturday: false
+			}
+		},
+		/* [::End Copy::] */
+
+		]
+	},
+
+	/* Other Settings */
+	sound: true, /* true (default sound), false or custom sound. Custom sound example, (sound:'assets/sound/notification.mp3') */
+	changeBrowserTitle: "New Message!", /* Custom text or false. To remove, (changeBrowserTitle:false) */
+	cookie: false, /* It does not show the speech bubble, notification number, and pulse effect again for the specified time. For example, do not show for 1 hour, (cookie:1) or to remove, (cookie:false) */
+});
+
+&lt;/script&gt;</code><code class="language-html">
+	&lt;!-- *** [END] REQUIRED JS FILES *** --&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+				</div>
+			</div>
+		</section>
+		<section id="options">
+			<div class="container">
+				<h3>Options</h3>
+				<p>Here you can see the JS options available for the plugin.</p>
+				<div class="content">
+					<div class="alert alert-dark">
+						<strong>BUTTON</strong>
+					</div>
+					<div class="table-responsive">
+						<table class="table table-bordered">
+							<thead class="thead-light">
+								<tr>
+									<th scope="col">Option</th>
+									<th scope="col">Type</th>
+									<th scope="col">Default</th>
+									<th scope="col">Usage and Description</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<th class="ws" scope="row"><code>position</code></th>
+									<td class="ws">string</td>
+									<td class="ws">right</td>
+									<td>Usage: <kbd>right</kbd>, <kbd>left</kbd> or <kbd>false</kbd></td>
+								</tr>
+								<tr>
+									<th class="ws" scope="row"><code>style</code></th>
+									<td class="ws">int</td>
+									<td class="ws">1</td>
+									<td>The button style from 1 till 7</td>
+								</tr>
+								<tr>
+									<th class="ws" scope="row"><code>src</code></th>
+									<td class="ws">string</td>
+									<td class="ws">default</td>
+									<td>Any icon set, image url or svg code.<br>
+										For example: <kbd>&lt;i class="fab fa-whatspp"&gt;&lt;/i&gt;</kbd>, <kbd>image/picture.jpg</kbd> or <kbd>svg code</kbd>
+									</td>
+								</tr>
+								<tr>
+									<th class="ws" scope="row"><code>effect</code></th>
+									<td class="ws">int</td>
+									<td class="ws">1</td>
+									<td>The button effect from 0 till 7</td>
+								</tr>
+								<tr>
+									<th class="ws" scope="row"><code>backgroundColor</code></th>
+									<td class="ws">string</td>
+									<td class="ws">#26c281</td>
+									<td>Standart HTML color code</td>
+								</tr>
+								<tr>
+									<th class="ws" scope="row"><code>notificationNumber</code></th>
+									<td class="ws">string</td>
+									<td class="ws">1</td>
+									<td>Any number or special character. To remove; <kbd>false</kbd></td>
+								</tr>
+								<tr>
+									<th class="ws" scope="row"><code>speechBubble</code></th>
+									<td class="ws">string</td>
+									<td class="ws">default</td>
+									<td>Usage: <kbd>custom text</kbd> or <kbd>false</kbd></td>
+								</tr>
+								<tr>
+									<th class="ws" scope="row"><code>pulseEffect</code></th>
+									<td class="ws">boolean</td>
+									<td class="ws">true</td>
+									<td>Usage: <kbd>true</kbd> or <kbd>false</kbd></td>
+								</tr>
+								<tr>
+									<th class="ws" scope="row"><code>text:title</code></th>
+									<td class="ws">string</td>
+									<td class="ws">default</td>
+									<td>Usage: <kbd>custom text</kbd></td>
+								</tr>
+								<tr>
+									<th class="ws" scope="row"><code>text:description</code></th>
+									<td class="ws">string</td>
+									<td class="ws">default</td>
+									<td>Usage: <kbd>custom text</kbd> or <kbd>false</kbd></td>
+								</tr>
+								<tr>
+									<th class="ws" scope="row"><code>text:online</code></th>
+									<td class="ws">string</td>
+									<td class="ws">default</td>
+									<td>Usage: <kbd>custom text</kbd> or <kbd>false</kbd></td>
+								</tr>
+								<tr>
+									<th class="ws" scope="row"><code>text:offline</code></th>
+									<td class="ws">string</td>
+									<td class="ws">default</td>
+									<td>Usage: <kbd>custom text</kbd> or <kbd>false</kbd></td>
+								</tr>
+								<tr>
+									<th class="ws" scope="row"><code>link:desktop</code></th>
+									<td class="ws">string</td>
+									<td class="ws">false</td>
+									<td>Usage: <kbd>custom link</kbd></td>
+								</tr>
+								<tr>
+									<th class="ws" scope="row"><code>link:mobile</code></th>
+									<td class="ws">string</td>
+									<td class="ws">false</td>
+									<td>
+										Usage: <kbd>custom link</kbd><br>
+										if <kbd>false</kbd> is entered, the desktop link will be active.
+									</td>
+								</tr>
+								<tr>
+									<th class="ws" scope="row"><code>onlineDay</code></th>
+									<td class="ws">string</td>
+									<td class="ws">false</td>
+									<td>
+										Usage: <kbd>sunday: '00:00-23:59'</kbd><br>
+										Change the day you are offline like this. (sunday:false)
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+				<div class="content">
+					<div class="alert alert-dark">
+						<strong>POPUP</strong>
+					</div>
+					<div class="table-responsive">
+						<table class="table table-bordered">
+							<thead class="thead-light">
+								<tr>
+									<th scope="col">Option</th>
+									<th scope="col">Type</th>
+									<th scope="col">Default</th>
+									<th scope="col">Usage and Description</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<th class="ws" scope="row"><code>automaticOpen</code></th>
+									<td class="ws">boolean</td>
+									<td class="ws">false</td>
+									<td>Usage: <kbd>true</kbd> or <kbd>false</kbd><br>
+										If activated, the popup window will be automatically opened when visitors enter the site.
+									</td>
+								</tr>
+								<tr>
+									<th class="ws" scope="row"><code>outsideClickClosePopup</code></th>
+									<td class="ws">boolean</td>
+									<td class="ws">true</td>
+									<td>Usage: <kbd>true</kbd> or <kbd>false</kbd><br>
+										Clicking anywhere on the page will close the popup.
+									</td>
+								</tr>
+								<tr>
+									<th class="ws" scope="row"><code>effect</code></th>
+									<td class="ws">int</td>
+									<td class="ws">1</td>
+									<td>The button effect from 0 till 15</td>
+								</tr>
+								<tr>
+									<th class="ws" scope="row"><code>header:backgroundColor</code></th>
+									<td class="ws">string</td>
+									<td class="ws">#26c281</td>
+									<td>Standart HTML color code</td>
+								</tr>
+								<tr>
+									<th class="ws" scope="row"><code>header:title</code></th>
+									<td class="ws">string</td>
+									<td class="ws">default</td>
+									<td>Usage: <kbd>custom text</kbd></td>
+								</tr>
+								<tr>
+									<th class="ws" scope="row"><code>header:description</code></th>
+									<td class="ws">string</td>
+									<td class="ws">default</td>
+									<td>Usage: <kbd>custom text</kbd> or <kbd>false</kbd></td>
+								</tr>
+								<tr>
+									<th class="ws" scope="row"><code>persons: []</code></th>
+									<td class="ws" colspan="3">array</td>
+								</tr>
+								<tr>
+									<th class="ws" scope="row"><code>persons:avatar:src</code></th>
+									<td class="ws">string</td>
+									<td class="ws">default</td>
+									<td>Any icon set, image url or svg code.<br>
+										For example: <kbd>&lt;i class="fab fa-whatspp"&gt;&lt;/i&gt;</kbd>, <kbd>image/picture.jpg</kbd> or <kbd>svg code</kbd>
+									</td>
+								</tr>
+								<tr>
+									<th class="ws" scope="row"><code>persons:avatar:backgroundColor</code></th>
+									<td class="ws">string</td>
+									<td class="ws">#26c281</td>
+									<td>Standart HTML color code</td>
+								</tr>
+								<tr>
+									<th class="ws" scope="row"><code>persons:avatar:onlineCircle</code></th>
+									<td class="ws">boolean</td>
+									<td class="ws">true</td>
+									<td>Usage: <kbd>true</kbd> or <kbd>false</kbd><br>
+										Avatar online circle.
+									</td>
+								</tr>
+								<tr>
+									<th class="ws" scope="row"><code>persons:text:title</code></th>
+									<td class="ws">string</td>
+									<td class="ws">default</td>
+									<td>Usage: <kbd>custom text</kbd></td>
+								</tr>
+								<tr>
+									<th class="ws" scope="row"><code>persons:text:description</code></th>
+									<td class="ws">string</td>
+									<td class="ws">default</td>
+									<td>Usage: <kbd>custom text</kbd> or <kbd>false</kbd></td>
+								</tr>
+								<tr>
+									<th class="ws" scope="row"><code>persons:text:online</code></th>
+									<td class="ws">string</td>
+									<td class="ws">default</td>
+									<td>Usage: <kbd>custom text</kbd> or <kbd>false</kbd></td>
+								</tr>
+								<tr>
+									<th class="ws" scope="row"><code>persons:text:offline</code></th>
+									<td class="ws">string</td>
+									<td class="ws">default</td>
+									<td>Usage: <kbd>custom text</kbd> or <kbd>false</kbd></td>
+								</tr>
+								<tr>
+									<th class="ws" scope="row"><code>persons:text:message</code></th>
+									<td class="ws">string</td>
+									<td class="ws">default</td>
+									<td>Used on one account only.<br>Shows message bubble.<br>Usage: <kbd>custom text</kbd> or <kbd>false</kbd></td>
+								</tr>
+								<tr>
+									<th class="ws" scope="row"><code>persons:text:textbox</code></th>
+									<td class="ws">string</td>
+									<td class="ws">default</td>
+									<td>Used on one account only.<br>Allows the visitor to write the message they want. This feature is currently only available on Whatsapp.<br>Usage: <kbd>custom text</kbd> or <kbd>false</kbd></td>
+								</tr>
+								<tr>
+									<th class="ws" scope="row"><code>persons:text:button</code></th>
+									<td class="ws">string</td>
+									<td class="ws">default</td>
+									<td>Used on one account only.<br>Except for Whatsapp, you only need to use the button.<br>Usage: <kbd>custom text</kbd> or <kbd>false</kbd></td>
+								</tr>
+								<tr>
+									<th class="ws" scope="row"><code>persons:link:desktop</code></th>
+									<td class="ws">string</td>
+									<td class="ws">false</td>
+									<td>Usage: <kbd>custom link</kbd></td>
+								</tr>
+								<tr>
+									<th class="ws" scope="row"><code>persons:link:mobile</code></th>
+									<td class="ws">string</td>
+									<td class="ws">false</td>
+									<td>
+										Usage: <kbd>custom link</kbd><br>
+										if <kbd>false</kbd> is entered, the desktop link will be active.
+									</td>
+								</tr>
+								<tr>
+									<th class="ws" scope="row"><code>persons:onlineDay</code></th>
+									<td class="ws">string</td>
+									<td class="ws">false</td>
+									<td>
+										Usage: <kbd>sunday: '00:00-23:59'</kbd><br>
+										Change the day you are offline like this. (sunday:false)
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+				
+				<div class="content">
+					<div class="alert alert-dark">
+						<strong>OTHER</strong>
+					</div>
+					<div class="table-responsive">
+						<table class="table table-bordered">
+							<thead class="thead-light">
+								<tr>
+									<th scope="col">Option</th>
+									<th scope="col">Type</th>
+									<th scope="col">Default</th>
+									<th scope="col">Usage and Description</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<th class="ws" scope="row"><code>sound</code></th>
+									<td class="ws">string</td>
+									<td class="ws">default</td>
+									<td>
+										A sound plays to attract attention of visitors to the site.<br>
+										For example: <kbd>"sound/notification.mp3"</kbd> or <kbd>false</kbd>
+									</td>
+								</tr>
+								<tr>
+									<th class="ws" scope="row"><code>changeBrowserTitle</code></th>
+									<td class="ws">string</td>
+									<td class="ws">default</td>
+									<td>
+										Whenever a visitor who enters into the site tries to swich to another tab in the browser, a flashing notice will appear on the browser title to get her/his attention.<br>
+										For example: <kbd>"custom text"</kbd> or <kbd>false</kbd>
+									</td>
+								</tr>
+								<tr>
+									<th class="ws" scope="row"><code>cookie</code></th>
+									<td class="ws">string</td>
+									<td class="ws">false</td>
+									<td>
+										Usage: <kbd>number</kbd> or <kbd>false</kbd><br>
+										When a user who visits your site clicks on the chat button, he/she will not see the talk bubble, the number of notifications and the pulse effect once again, even if he/she visits other pages on the site or refreshes the page.<br>
+										For example: 1 (In hour)
+									</td>
+								</tr>
+								<tr>
+									<th class="ws" scope="row"><code>timezone</code></th>
+									<td class="ws">string</td>
+									<td class="ws">false</td>
+									<td>It allows you to use the time zone of any country, city and shows the selected time zone to your visitors.<br><br>
+										For example, it is 10:00 o'clock in your country and 14:00 in New York and if you want to serve your visitors on New York time zone, you should use the feature as follows.<br><br>
+										For example;<br>
+										<code>timezone: "America/New_York"</code><br><br>
+										You can check the country codes from <a href="https://momentjs.com/timezone/" target="_blank" rel="nofollow">this address</a>
+									</td>
+								</tr>
+								<tr>
+									<th class="ws" scope="row"><code>onLoad</code></th>
+									<td class="ws">function</td>
+									<td class="ws">function(){}</td>
+									<td>This event is triggered when the plugin is loaded.</td>
+								</tr>
+								<tr>
+									<th class="ws" scope="row"><code>onClick</code></th>
+									<td class="ws">function</td>
+									<td class="ws">function(){}</td>
+									<td>This event is triggered when the plugin is clicked.</td>
+								</tr>
+								<tr>
+									<th class="ws" scope="row"><code>onPopupOpen</code></th>
+									<td class="ws">function</td>
+									<td class="ws">function(){}</td>
+									<td>This event is triggered when the popup opens.</td>
+								</tr>
+								<tr>
+									<th class="ws" scope="row"><code>onPopupClose</code></th>
+									<td class="ws">function</td>
+									<td class="ws">function(){}</td>
+									<td>This event is triggered when the popup closes.</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</section>
+		<footer>
+			<div class="container">© 2021 Czm All in One Social Chat Support. Plugin made by <a href="https://codecanyon.net/user/czmmedia" target="_blank" rel="nofollow">czmMedia</a></div>
+		</footer>
+		<!-- jQuery Min JS -->
+		<script src="assets/js/jquery-1.9.0.min.js"></script>
+		<!-- Bootstrap Min JS -->
+		<script src="assets/js/bootstrap.min.js"></script>
+		<!-- PrismJS Min JS -->
+		<script src="assets/js/prism.js"></script>
+		<!-- Documentation JS -->
+		<script src="assets/js/documentation.js"></script>
+	</body>
+</html>
